@@ -35,7 +35,15 @@ class ArticleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if ($request->file('image')) {
+            $image_name = $request->file('image')->store('images','public');
+        }
+        Article::Create([
+            'title' => $request->title,
+            'content' => $request->content,
+            'featured_image' => $image_name,
+        ]);
+        return 'Artikel Berhasil disimpan';
     }
 
     /**
