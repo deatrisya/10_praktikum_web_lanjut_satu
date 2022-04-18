@@ -14,3 +14,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::resource('articles', ArticleController::class);
+Route::get('/article/cetak_pdf',[ArticleController::class,'cetak_pdf']);
