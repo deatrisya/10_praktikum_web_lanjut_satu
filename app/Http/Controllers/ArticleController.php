@@ -24,7 +24,7 @@ class ArticleController extends Controller
      */
     public function create()
     {
-        //
+        return view('articles.create');
     }
 
     /**
@@ -43,7 +43,7 @@ class ArticleController extends Controller
             'content' => $request->content,
             'featured_image' => $image_name,
         ]);
-        return 'Artikel Berhasil disimpan';
+        return 'Artikel Berhasil Disimpan';
     }
 
     /**
